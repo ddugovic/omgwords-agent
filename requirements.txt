@@ -23,6 +23,6 @@ PyHamcrest==2.0.2
 pytest==4.6.11
 pytest-django==3.10.0
 git+git://github.com/michaelelin/pytest-relaxed@00cb382#egg=pytest-relaxed
-pyyaml==5.1.2
+pyyaml==5.4
 requests==2.22.0
 rollbar==0.15.1
