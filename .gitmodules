@@ -1,6 +1,6 @@
-[submodule "classic_tetris_project/reportmatchmodule"]
-	path = classic_tetris_project/reportmatchmodule
+[submodule "omgwords-agent/reportmatchmodule"]
+	path = omgwords-agent/reportmatchmodule
 	url = https://github.com/alex-ong/CTMEditor.git
-[submodule "classic_tetris_project/private"]
-	path = classic_tetris_project/private
+[submodule "omgwords-agent/private"]
+	path = omgwords-agent/private
 	url = https://github.com/professor-l/ctp-private.git

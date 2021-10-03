@@ -1,4 +1,4 @@
-# Contributing to ClassicTetrisBot 
+# Contributing to OMGWordsAgent 
 
 From the beginning - even with the old Node.js bot - this project has been open source, licensed under the highly permissive MIT license. I want everyone to be able to see the code, but I also want anyone to be able to run it, mess with it, and break it.
 
@@ -20,10 +20,10 @@ We have two tiers of people whose code appears somewhere in this repository:
 
 However, as a fully-fleged team member, you are also expected to be another potential responder in the case of an outage or urgent bug report. At least 95% of the time, all this entails is restarting the bot on AWS (with a computer and an internet connection, this can be done in under a minute). You should also, ideally, spend at least a few hours each week doing some bot-related work. Admittedly, dexfore and I have both been slacking on this lately because the bot is in a good place right now and our next step is kind of a big one, but this is a general guideline.
 
-Those looking to become team members should start by contributing something small. There is a to-do list of small planned additions on this repo's [project page](https://github.com/professor-l/classic-tetris-project/projects/1). Picking something from there is a great way to sumbit a small first PR, but before jumping into that, it's a good idea to take a look at a few markdown documents aside from this one:
-* [README.md](https://github.com/professor-l/classic-tetris-project/blob/master/README.md): Yes, it's just the readme, but please actually read it (or finish reading it) if you haven't already. 
-* [ARCHITECTURE.md](https://github.com/professor-l/classic-tetris-project/blob/master/docs/ARCHITECTURE.md): A long(ish) write-up detailing our design process of this bot's architecture. It's written like a blog to make it a little more bearable (and beacuse I hate writing purely technical documentation).
-* [SETUP_QUICK.md](https://github.com/professor-l/classic-tetris-bot/blob/master/docs/SETUP_QUICK.md): A guide to setting up a quick development environment.
-* [SETUP_ROBUST.md](https://github.com/professor-l/classic-tetris-bot/blob/master/docs/SETUP_ROBUST.md): Similar to the quick setup guide, but more comprehensive; designed for those who intend to submit multiple contributions or become a team member.
+Those looking to become team members should start by contributing something small. There is a to-do list of small planned additions on this repo's [project page](https://github.com/ddugovic/omgwords-agent/projects/1). Picking something from there is a great way to sumbit a small first PR, but before jumping into that, it's a good idea to take a look at a few markdown documents aside from this one:
+* [README.md](https://github.com/ddugovic/omgwords-agent/blob/master/README.md): Yes, it's just the readme, but please actually read it (or finish reading it) if you haven't already. 
+* [ARCHITECTURE.md](https://github.com/ddugovic/omgwords-agent/blob/master/docs/ARCHITECTURE.md): A long(ish) write-up detailing our design process of this bot's architecture. It's written like a blog to make it a little more bearable (and beacuse I hate writing purely technical documentation).
+* [SETUP_QUICK.md](https://github.com/ddugovic/omgwords-agent/blob/master/docs/SETUP_QUICK.md): A guide to setting up a quick development environment.
+* [SETUP_ROBUST.md](https://github.com/ddugovic/omgwords-agent/blob/master/docs/SETUP_ROBUST.md): Similar to the quick setup guide, but more comprehensive; designed for those who intend to submit multiple contributions or become a team member.
 
 Once you've read those pages, including at least one of the setup guides, you should be prepared to submit your first pull request. Write your code, submit the PR, and DM me on Discord to let me know that it's waiting my approval. Best of luck!

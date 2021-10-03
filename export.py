@@ -1,14 +1,14 @@
-from classic_tetris_project import discord
-from classic_tetris_project.env import env
+from omgwords-agent import discord
+from omgwords-agent.env import env
 
 @discord.client.event
 async def on_ready():
     import csv
     from tqdm import tqdm
 
-    from classic_tetris_project import discord
-    from classic_tetris_project.countries import countries
-    from classic_tetris_project.models import User
+    from omgwords-agent import discord
+    from omgwords-agent.countries import countries
+    from omgwords-agent.models import User
 
     with open('pbs.csv', 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=['twitch_id', 'twitch_username',

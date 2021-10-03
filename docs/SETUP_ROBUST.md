@@ -4,9 +4,7 @@ In the case of a bot like this, when we implement new features, we test them on 
 
 ## Preliminaries
 
-The bot runs on an Amazon Web Services (AWS) [EC2 instance](https://aws.amazon.com/ec2). AWS is highly reliable, runs 24/7, and most importantly allows us to dynamically scale the resources as necessary. When I first joined the CTM server, it was quite literally less tha 1% of its current size. This bot started out on Twitch only, without a `!summon` command, and was in only one channel aside from [its own](https://www.twitch.tv/classictetrisbot): the [ClassicTetris channel](https://www.twitch.tv/classictetris). Today, it is in over 120. Scalability is important - as the Tetris community continues to grow (and as this project and the corresponding [website](https://monthlytetris.info) do so alongside it), we will need room to expand not only the software but the hardware infrastructure as well.
-
-The AWS instance is running under the Ubuntu 18.04 LTS server distribution, but for development, I'm confident that any \*nix operating system will do. However, if you have Windows, you may consider [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10), which allows you to run many Linux distributions, including Ubuntu 16.04 and 18.04, from your Windows machine. WSL can be finnicky, but it works well enough for this.
+My cloud instance is running under the Ubuntu 20.10 server distribution. If you have Windows, you may consider [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10), which allows you to run many Linux distributions, including Ubuntu 16.04 and 18.04, from your Windows machine. WSL can be finnicky, but it works well enough for this.
 
 Once you have access to sudo priviliges in a bash command line with which you are relatively comfortable, you can proceed. For the following instructions, I use `apt` as a package manager, but you may replace that with whatever your operating system uses (`dnf`, `yum`, `pacman`, and `brew` are a few examples).
 
@@ -42,27 +40,27 @@ Now, make sure you're logged in to your GitHub account, and **fork this reposito
 Next, back in your command line, clone your new forked repository (replacing `YOUR-USERNAME` in the following command with your GitHub username) and enter the directory:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/classic-tetris-project.git
-cd classic-tetris-project
+git clone https://github.com/YOUR-USERNAME/omgwords-agent.git
+cd omgwords-agent
 ```
 
-Now, we can make a virtual environment with the previously installed tool. I called mine `ctp`, short for Classic Tetris Project. Because this bot runs on Python 3.7, we direct the virtual environment to use that version (Which should now be installed) with the `--python` flag:
+Now, we can make a virtual environment with the previously installed tool. Because this bot runs on Python 3.7, we direct the virtual environment to use that version (Which should now be installed) with the `--python` flag:
 
 ```bash
-mkvirtualenv ctp --python=/usr/bin/python3.7
+mkvirtualenv omgwords --python=/usr/bin/python3.7
 ```
 
-After running that, there should be a `(ctp)` preceeding the bash prompt on your screen. Mine looks like this:
+After running that, there should be a `(omgwords)` preceeding the bash prompt on your screen. Mine looks like this:
 
 ```
-(ctp) elle@home-dev-server:classic-tetris-project$
+(omgwords) dev@home-dev-server:omgwords-agent$
 ```
 
-Every time you restart the bash session, when you enter the repository to develop or test, you have to remember to type `workon ctp` to also enter the virtual environment you've created. Errors will arise if you do not, because your machine will try to run the bot under Python 2.7.
+Every time you restart the bash session, when you enter the repository to develop or test, you have to remember to type `workon omgwords` to also enter the virtual environment you've created. Errors will arise if you do not, because your machine will try to run the bot under Python 2.7.
 
 ### Development Requirements and Database Setup
 
-From within the project's root directory (`classic-tetris-project`), run the following command to install the requirements:
+From within the project's root directory (`omgwords-agent`), run the following command to install the requirements:
 
 ```bash
 pip install -r requirements.txt
@@ -83,7 +81,7 @@ Now, we're ready to create your bot accounts. These are the accounts that your b
 
 #### Twitch
 
- First, create a **new Twitch account** that will act as your bot for testing. My test account is called ClassicTetrisBotTest, but you can call yours anything you want. I recommend doing this in a private browsing/incognito window (or in a browser you don't normally use for Twitch) so you don't have to log out of your actual Twitch account. Next, in that same window in a new tab, go to `https://twitchapps.com/tmi/`. TMI stands for "Twitch Messaging Interface", and this webpage will generate an OAuth token that allows your bot to actually log into the Twitch account. Click the "Continue" button, then "Authorize" on the next page. Once you are presented with the OAuth key, **copy it into a text document or otherwise save it for later**. This includes the `oauth:` prefix. Then, you may close the tab.
+ First, create a **new Twitch account** that will act as your bot for testing. My test account is called OMGWordsAgentTest, but you can call yours anything you want. I recommend doing this in a private browsing/incognito window (or in a browser you don't normally use for Twitch) so you don't have to log out of your actual Twitch account. Next, in that same window in a new tab, go to `https://twitchapps.com/tmi/`. TMI stands for "Twitch Messaging Interface", and this webpage will generate an OAuth token that allows your bot to actually log into the Twitch account. Click the "Continue" button, then "Authorize" on the next page. Once you are presented with the OAuth key, **copy it into a text document or otherwise save it for later**. This includes the `oauth:` prefix. Then, you may close the tab.
 
 Next, ideally in the same browser window, head to `https://dev.twitch.tv`. Click "Log in with Twitch" in the top right, and then "Authorize" on the subsequent page. When you're redirected back to the dev homepage, click on the "Your Console" button in the top right (right where the login button used to be). On the right, in the Applications panel, click "Register Your Application". The *Name* field can be whatever you want, but you should add `http://localhost` as an *OAuth Redirect URL*, and the *Category* should be "Chat Bot". Complete the captcha and click "Create". Then, click "Manage", and **copy and store the contents of the Client ID field in the same place you stored your OAuth key.** Make sure you remember which is which (the OAuth key should still have that `oauth:` prefix).
 
@@ -95,9 +93,9 @@ By default, the bot you create has the same username as the name of your project
 
 Next, head to the OAuth tab on the left, and check the permission boxes exactly according to the following images:
 
-![OAuth Permissions](https://github.com/professor-l/classic-tetris-project/blob/master/docs/img/oauth_permissions.png)
+![OAuth Permissions](https://github.com/professor-l/omgwords-agent/blob/master/docs/img/oauth_permissions.png)
 
-![Bot Permissions](https://github.com/professor-l/classic-tetris-project/blob/master/docs/img/permissions.png)
+![Bot Permissions](https://github.com/professor-l/omgwords-agent/blob/master/docs/img/permissions.png)
 
 Then, copy the URL given at the bottom of the OAuth permissions box (the first one) and save it sommewhere (only briefly - you can just paste it in a new tab if you want).  Finally, back on the Discord app, create a [new server](https://support.discordapp.com/hc/support/en-us/articles/204849977-How-do-I-create-a-server-) to use as your testing server. 
 
@@ -109,7 +107,7 @@ One last step on Discord - go into your settings in Discord itself, head into th
 
 Okay, I *promise* we're almost done. We just have one more step.
 
-Back in the `classic-tetris-project` directory, either using a command-line or GUI text editor, create a new file in the root directory called `.env`. This file will store environment variables on which the bot depends. Fill out the file like so:
+Back in the `omgwords-agent` directory, either using a command-line or GUI text editor, create a new file in the root directory called `.env`. This file will store environment variables on which the bot depends. Fill out the file like so:
 
 ```
 DISCORD_TOKEN=<Your Discord token>

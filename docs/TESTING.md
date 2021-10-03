@@ -19,7 +19,7 @@ We mostly use Django's testing framework, with a few modifications (heavily insp
 
 Test are organized inside of test classes that inherit from `TestCase`. Each test class can have multiple test methods, which are each run individually. Tests use their own test database, which is reset between each test.
 
-All tests should be contained in the `tests/` directory, whose structure mirrors that of `classic_tetris_project/`. Each file being tested should have an associated test file whose name is prefixed with `test_`. Each class being tested should be tested in a test class that inherits from `TestCase`. All test method names should begin with `test_`. For example, if `classic_tetris_project/models/users.py` contained a class named `User`, then we would write tests for this class in `tests/models/test_users.py`, which would contain:
+All tests should be contained in the `tests/` directory, whose structure mirrors that of `omgwords-agent/`. Each file being tested should have an associated test file whose name is prefixed with `test_`. Each class being tested should be tested in a test class that inherits from `TestCase`. All test method names should begin with `test_`. For example, if `omgwords-agent/models/users.py` contained a class named `User`, then we would write tests for this class in `tests/models/test_users.py`, which would contain:
 ```python
 class UserTestCase(TestCase):
     def test_that_it_does_something(self):
@@ -27,9 +27,9 @@ class UserTestCase(TestCase):
 ```
 
 ### Writing tests
-Your most important resource when writing tests is our [`tests.helper`](https://github.com/professor-l/classic-tetris-project/blob/master/tests/helper/__init__.py) module. This imports a bunch of useful testing tools for you so that you don't have to import a million things at the top of each of your test files. Every test file should begin with:
+Your most important resource when writing tests is our [`tests.helper`](https://github.com/professor-l/omgwords-agent/blob/master/tests/helper/__init__.py) module. This imports a bunch of useful testing tools for you so that you don't have to import a million things at the top of each of your test files. Every test file should begin with:
 ```python
-from classic_tetris_project.tests.helper import *
+from omgwords-agent.tests.helper import *
 ```
 
 Some of the tools included are:
@@ -40,7 +40,7 @@ Some of the tools included are:
   ```
   All factories are included in `tests.helper`.
 - [mock](https://docs.python.org/3/library/unittest.mock.html) allows you to mock out parts of the system during testing in order to isolate the functionality that you want to test. For example, you might mock out a discord.py API call to return a specific value, or assert that a method was called with specific arguments. I most frequently find myself using the `@patch` or `@patch.object` decorators around test methods.
-- The `@lazy` decorator (defined in [`memo.py`](https://github.com/professor-l/classic-tetris-project/blob/master/classic_tetris_project/util/memo.py)) composes the `@property` and `@memoize` decorators. I find this particularly useful to define *lazy resources* in test cases where multiple of the test methods share a variable (e.g. a `User` instance). For example, I might define a lazy `user` resource on a test case:
+- The `@lazy` decorator (defined in [`memo.py`](https://github.com/professor-l/omgwords-agent/blob/master/omgwords-agent/util/memo.py)) composes the `@property` and `@memoize` decorators. I find this particularly useful to define *lazy resources* in test cases where multiple of the test methods share a variable (e.g. a `User` instance). For example, I might define a lazy `user` resource on a test case:
   ```python
   @lazy
   def user(self):

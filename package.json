@@ -1,5 +1,5 @@
 {
-  "name": "classic_tetris_project_django",
+  "name": "omgwords-agent-django",
   "version": "1.0.0",
   "description": "This repository is a new and improved bot for Classic Tetris Monthly that is designed to be accessible to the whole community, both in and out of CTM contexts.  It is currently being run on a cloud computing instance rather than a home PC, and as such its uptime is drastically improved from the strikingly mediocre [former bot](https://github.com/professor-l/lsq-bot).",
   "main": "index.js",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/professor-l/classic-tetris-project.git"
+    "url": "git+https://github.com/professor-l/omgwords-agent.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/professor-l/classic-tetris-project/issues"
+    "url": "https://github.com/professor-l/omgwords-agent/issues"
   },
-  "homepage": "https://github.com/professor-l/classic-tetris-project#readme",
+  "homepage": "https://github.com/professor-l/omgwords-agent#readme",
   "dependencies": {
     "bootstrap": "^4.6.0",
     "css-loader": "^3.6.0",

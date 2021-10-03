@@ -8,7 +8,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
   context: __dirname,
 
-  entry: './classic_tetris_project/private/assets/app',
+  entry: './omgwords-agent/private/assets/app',
 
   output: {
     path: path.resolve('./static/bundles/'),

@@ -10,11 +10,11 @@ sudo apt install python3 python3-dev python3-pip sqlite3 libsqlite3-dev
 
 On other \*nix distributions, replace `apt` with your package manager (`dnf`, `yum`, `pacman`, `brew`, or something else).
 
-Once those are installed, click the "Fork" button in the top right of this page to make your own copy of the `classic-tetris-project` repository. Then, you can head into your shell and clone the repository:
+Once those are installed, click the "Fork" button in the top right of this page to make your own copy of the `omgwords-agent` repository. Then, you can head into your shell and clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/classic-tetris-project
-cd classic-tetris-project
+git clone https://github.com/YOUR-USERNAME/omgwords-agent
+cd omgwords-agent
 ```
 
 Replacing "YOUR-USERNAME" with your actual GitHub username.

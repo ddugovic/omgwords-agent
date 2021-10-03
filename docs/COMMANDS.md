@@ -1,6 +1,6 @@
 # Commands
 
-The following is a detailed outline of each command the bot supports. As always, suggestions for more commands are welcome - you may open a [GitHub issue](https://github.com/professor-l/classic-tetris-project/issues/new) to suggest them as well as to report bugs in the existing ones.
+The following is a detailed outline of each command the bot supports. As always, suggestions for more commands are welcome - you may open a [GitHub issue](https://github.com/professor-l/omgwords-agent/issues/new) to suggest them as well as to report bugs in the existing ones.
 
 Commands are listed with `<required parameters>` and `[optional parameters]`, which occasionally have a `[default=value]`.
 
@@ -236,7 +236,7 @@ Ends the current match, automatically determining the winner based on the match 
 
 Say this in a channel the bot is in to add the bot to your Twitch channel.  If you've `!link`ed your Twitch and Discord accounts through the bot, you can even summon the bot to your Twitch channel by messaging it on Discord.
 
-**Note**: If you plan on using the countdown command (Or if you think the bot will be chatting often), make sure you make the bot a moderator to allow it to send more than one message per second.
+**Note**: If you think the bot will be chatting often, make sure you make the bot a moderator to allow it to send more than one message per second.
 
 ---
 #### `!pleaseleavemychannel`
@@ -244,15 +244,6 @@ Say this in a channel the bot is in to add the bot to your Twitch channel.  If y
 **Must be run in a private message**
 
 Call this command in a whisper to the bot to remove the bot from your channel.
-
----
-#### `!3`
-**Platforms**: Twitch<br/>
-**Moderator-only**
-
-Counts down from 3 before saying "Tetris!" in the chat. Works for any number from 3-10. 
-
-**Note:** If the bot is not a moderator in your Twitch channel, it will not be able to say more than one message per second, and this restriction (which is built into Twitch) will interfere with countdowns. You can make the bot a moderator by typing `/mod @ClassicTetrisBot` after you have `!summon`ed it.
 
 ---
 #### `!stencil`
